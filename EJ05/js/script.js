@@ -40,8 +40,6 @@ function EjecutarEj1() {
         } else {
             console.log("Es un número impar")
         }
-    } else {
-        console.log("Tu número no es positivo")
     }
 }
 
