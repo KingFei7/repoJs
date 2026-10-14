@@ -16,13 +16,14 @@ function EjecutarEj1() {
         console.log("No has introducido nada en el recuadro, introduce el número como se te indica")
         return;
     }
-    const numAComparar = Number(texto);
+    let numAComparar = Number(texto);
 
     if (Number.isNaN(numAComparar)) {
         console.log("Eso no es un número, escribe un número como se indica")
         return;
     }
-
+    
+    numAComparar = numAComparar * 2 ** 2 - 3.14 - 4.1;
     console.log("Has introducido el número", numAComparar , ", que tiene las siguientes caracteristicas:")
     if (numAComparar < 0) {
         console.log("Es un número negativo")

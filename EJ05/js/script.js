@@ -22,7 +22,6 @@ function EjecutarEj1() {
         console.log("Eso no es un número, escribe un número como se indica")
         return;
     }
-
     console.log("Has introducido el número", numAComparar , ", que tiene las siguientes caracteristicas:")
     if (numAComparar < 0) {
         console.log("Es un número negativo")
