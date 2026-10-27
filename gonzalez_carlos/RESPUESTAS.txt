@@ -1,0 +1,5 @@
+Preguntas del examen:
+1. ¿Por qué usamos JavaScript, y no solamente HTML, para responder al clic y modificar el contenido de la página?
+Porque con JavaScript podemos añadir más comprobaciones sin tener que centralizarlo todo en el HTML, de tal forma que el código salga de forma correcta, además de poder manipular los datos de manera sencilla.
+2. Explica qué ocurriría si intentases mostrar detalle fuera del bloque if.
+Que no podría verse porque es una variable local del if así que el código no funcionaría.

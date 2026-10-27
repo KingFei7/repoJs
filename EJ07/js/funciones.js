@@ -1,0 +1,82 @@
+"use strict";
+
+window.onload = principal;
+
+function principal() {
+    document.getElementById("ej1").onclick = ej1;
+}
+//ej1
+function esNumero(entrada){
+    const comprobacion = Number(entrada);
+    let valorEntrada = String(entrada).trim();
+    if (Number.isNaN(comprobacion) || valorEntrada === "") {
+        return false;
+    } else {
+        return true;
+    }
+}
+function esEntero(numero){
+    if (!esNumero(numero) || !Number.isInteger(numero)) {
+        return false;
+    } else {
+        return true;
+    }
+}
+function esPositivo(numero){
+    if (!esNumero(numero) || numero<0) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function ej1(num) {
+    if (num == "") {
+        return "No lo dejes en blanco, anda";
+    }
+    const numero = Number(num); 
+
+    console.log(esNumero(numero) ? "Es un número" : "No es un número");
+    if (!esNumero(numero)) {
+        return;
+    }
+    console.log(esEntero(numero) ? "Es entero" : "No es entero");
+    console.log(esPositivo(numero) ? "Es positivo" : "No es positivo");
+}
+
+//ej2
+function suma(a,b) {
+    if (esNumero(a) && esNumero(b)){
+        return a + b;
+    } else {
+        return NaN;
+    }
+}
+
+function resta(a,b) {
+    if (esNumero(a) && esNumero(b)){
+        return a - b;
+    } else {
+        return NaN;
+    }
+}
+
+function dividir(a, b){
+    if (b == 0) {
+        return NaN;
+    }
+    if (esNumero(a) && esNumero(b)) {
+        return a / b
+    } else {
+        return NaN;
+    }
+}
+
+function multiplicar(a,b) {
+    if (esNumero(a) && esNumero(b)){
+        return a * b;
+    } else {
+        return NaN;
+    }
+}
+
