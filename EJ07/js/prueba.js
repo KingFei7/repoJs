@@ -37,10 +37,25 @@ prueba('resta("", 3)', resta("", 3), NaN);
 prueba('resta("sdamlksdjl", "gdasjhgsdk")',resta("sdamlksdjl", "gdasjhgsdk"), NaN)
 //Pruebas de dividir()
 prueba('dividir(3,2)', dividir(3,2), 1.5);
-prueba('dividir(3, 0)', dividir("", 3), NaN);
+prueba('dividir(3, 0)', dividir(3, 0), NaN);
 prueba('dividir("sdamlksdjl", "gdasjhgsdk")',dividir("sdamlksdjl", "gdasjhgsdk"), NaN);
 //Pruebas de multiplicar()
 prueba('multiplicar(3,2)', multiplicar(3,2), 6);
 prueba('multiplicar("", 3)', multiplicar("", 3), NaN);
 prueba('multiplicar("sdamlksdjl", "gdasjhgsdk")',multiplicar("sdamlksdjl", "gdasjhgsdk"), NaN);
-//
+//Prueba de factorial()
+prueba('factorial(9)', factorial(9), 362880);
+prueba('factorial(0)', factorial(0), 1);
+prueba('factorial(-1)', factorial(-1), NaN);
+//Prueba sumatorio()
+prueba('sumatorio(9)', sumatorio(9), 45);
+prueba('sumatorio(0)', sumatorio(0), 0);
+prueba('sumatorio(-1)', sumatorio(-1), NaN);
+//Prueba esRango()
+prueba('enRango(9,0,10)', enRango(9,0,10), true);
+prueba('enRango(0,0,10)', enRango(0,0,10), true);
+prueba('enRango(-10,0,10)',enRango(-10,0,10), false);
+//Prueba esDivisible()
+prueba('esDivisible(9,3)', esDivisible(9,3), true)
+prueba('esDivisible(9,9)', esDivisible(9,9), true)
+prueba('esDivisible(9,100)', esDivisible(9,100), false)

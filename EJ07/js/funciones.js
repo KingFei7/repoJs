@@ -80,3 +80,49 @@ function multiplicar(a,b) {
     }
 }
 
+//ej3
+function factorial(num) {
+    let resultado = 1
+    if (esPositivo(num)){
+        for (let index = 1; index <= num; index++) {
+            resultado *=  index;
+        }
+        return resultado;
+    } else {
+        return NaN
+    }
+}
+
+function sumatorio(num)  {
+    let resultado = 0; 
+    if (esPositivo(num)){
+        for (let index = 1; index <= num; index++) {
+            resultado +=  index;
+        }
+        return resultado;
+    } else {
+        return NaN
+    }
+}
+
+//ej4
+function enRango(numero, minimo, maximo) {
+    if (numero >= minimo && numero <= maximo) {
+        return true
+    } else {
+        return false
+    }
+}
+
+function esDivisible(dividendo, divisor) {
+    if (divisor == 0){
+        return false
+    }
+
+    if (dividendo%divisor == 0) {
+        return true
+    } else {
+        return false
+    }
+}
+
