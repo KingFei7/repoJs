@@ -13,7 +13,7 @@ function principal() {
 }
 
 function analizar() {
-
+    const texto = document.getElementById("texto1").value;
     if (texto === null || texto.trim() === "") {
         salida.textContent =
         "Escribe algo en la primera caja de texto" 
@@ -30,7 +30,7 @@ function analizar() {
 }
 
 function buscar(){
-
+    const texto = document.getElementById("texto1").value;
     const aBuscar = document.getElementById("texto2").value;
 
     if (texto === null || texto.trim() === "" || aBuscar === null || aBuscar.trim() === "" ) {
@@ -64,8 +64,8 @@ function transformar(){
         "Escribe algo en las cajas de texto de posiciones" 
         return
     }
-    const primeraPos = Number(document.getElementById("pos0"));
-    const ultimaPos = Number(document.getElementById("posF"));
+    const primeraPos = Number(document.getElementById("pos0").value);
+    const ultimaPos = Number(document.getElementById("posF").value);
 
     if (texto === null || texto.trim() === "") {
         salida.textContent =
@@ -76,13 +76,13 @@ function transformar(){
     if (Number.isNaN(primeraPos) || Number.isNaN(ultimaPos)){
         salida.textContent =
         "Escribe números en las cajas de texto de posiciones" 
-        return
+        return;
     }
 
     if (!esPositivo(primeraPos) || !esPositivo(ultimaPos)) {
         salida.textContent =
         "Escribe números positivos en las cajas de texto de posiciones" 
-        return
+        return;
     }
 
     const Slice = texto.slice(primeraPos, ultimaPos) //La diferencia entre slice y substring es que slice corta exactamente entre los indices que le digas
@@ -90,6 +90,6 @@ function transformar(){
     
     salida.textContent += "Has introducido este texto: " + texto + "\n"
     + "Has seleccionado los siguientes indices: " + primeraPos + " y " + ultimaPos + "\n" 
-    + "En Slice provoca este resultado: " + Slice + "\n" +
+    + "En Slice provoca este resultado: " + Slice + "\n" 
     + "En Substring provoca este cambio: " + Substring; 
 }
