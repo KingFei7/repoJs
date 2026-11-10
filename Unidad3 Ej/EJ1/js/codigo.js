@@ -6,7 +6,7 @@ window.onload = principal;
 function principal() {
     
     const texto = document.getElementById("texto1").value;
-    
+    const salida = document.getElementById("salida");
     document.getElementById("analizar").onclick = analizar;
     document.getElementById("buscar").onclick = buscar;
     document.getElementById("transformar").onclick = transformar;
@@ -15,15 +15,16 @@ function principal() {
         const textoVal = document.getElementById("texto1").value;
         const charVal = document.getElementById("texto2").value;
         contarOcurrencias(textoVal, charVal);
-    };
+    }; //Si pusieramos directamente contarOcurrencias con el valor, la función no se ejecutaría correctamente. Necesitamos ponerlo así para introducir los argumentos de forma correcta
     document.getElementById("palindromo").onclick = function() {
         const textoVal = document.getElementById("texto1").value;
-        palindromo(textoVal);
+        esPalindromo(textoVal);
     };
 }
-const salida = document.getElementById("salida");
+
 function analizar() {
     const texto = document.getElementById("texto1").value;
+    //En caso de que no haya nada escrito, la función no se ejecuta
     if (texto === null || texto.trim() === "") {
         salida.textContent =
         "Escribe algo en la primera caja de texto" 
@@ -43,14 +44,16 @@ function buscar(){
     const texto = document.getElementById("texto1").value;
     const aBuscar = document.getElementById("texto2").value;
 
+    //En caso de que no haya nada escrito, la función no se ejecuta
     if (texto === null || texto.trim() === "" || aBuscar === null || aBuscar.trim() === "" ) {
         salida.textContent =
         "Escribe algo en la primera y en la segunda caja de texto" 
         return
     }  
 
-    const seIncluye = texto.includes(aBuscar);
+    const seIncluye = texto.includes(aBuscar); 
 
+    //Para comprobar si el texto contiene los caracteres que buscamos he decidido utilizar un includes en vez de un indexOf porque devuelve un booleano y no un -1 que me parece menos acertado
     if (!seIncluye){
         salida.textContent =
         "El segundo campo de texto no se encuentra en el primero" 
@@ -140,7 +143,7 @@ function contarOcurrencias(texto, caracter) {
     return count;
 }
 
-function palindromo(texto) {
+function esPalindromo(texto) {
     const salida = document.getElementById("salida");
     let inicio = 0;
     const textoLimpio = texto.replaceAll(" ", "").toLowerCase();
