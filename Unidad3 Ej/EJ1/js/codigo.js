@@ -4,14 +4,24 @@ window.onload = principal;
 
 
 function principal() {
-    const salida = document.getElementById("salida");
+    
     const texto = document.getElementById("texto1").value;
     
     document.getElementById("analizar").onclick = analizar;
     document.getElementById("buscar").onclick = buscar;
     document.getElementById("transformar").onclick = transformar;
+    document.getElementById("remplazar").onclick = remplazar;
+    document.getElementById("contar").onclick = function() {
+        const textoVal = document.getElementById("texto1").value;
+        const charVal = document.getElementById("texto2").value;
+        contarOcurrencias(textoVal, charVal);
+    };
+    document.getElementById("palindromo").onclick = function() {
+        const textoVal = document.getElementById("texto1").value;
+        palindromo(textoVal);
+    };
 }
-
+const salida = document.getElementById("salida");
 function analizar() {
     const texto = document.getElementById("texto1").value;
     if (texto === null || texto.trim() === "") {
@@ -92,4 +102,56 @@ function transformar(){
     + "Has seleccionado los siguientes indices: " + primeraPos + " y " + ultimaPos + "\n" 
     + "En Slice provoca este resultado: " + Slice + "\n" 
     + "En Substring provoca este cambio: " + Substring; 
+}
+
+function remplazar() {
+    const texto = document.getElementById("texto1").value;
+    const count = 0;
+    if (texto.toUpperCase().indexOf("A") == -1) {
+        salida.textContent += 
+        "Tu texto no tiene As";
+    } else {
+        salida.textContent += "Tu texto: " + texto + "\n" +
+        "Texto cambiado: " + texto.replaceAll("(?i)a", 4);
+    }
+}
+
+function contarOcurrencias(texto, caracter) {
+    const salida = document.getElementById("salida");
+    let count = 0;
+    if (caracter.length != 1) {
+        salida.textContent += "\nIntroduce un único caracter";
+        return;
+    }
+
+    if (texto.indexOf(caracter) == -1) {
+        salida.textContent += "\nTu caracter no se encuentra en la cadena";
+        return;
+    }
+
+    for (let index = 0; index < texto.length; index++) {
+        if (texto[index] == caracter) {
+            count++;
+        }
+    }
+
+    salida.textContent += "\nTu caracter: " + caracter + " aparece en " + texto + " " + count + " veces";
+
+    return count;
+}
+
+function palindromo(texto) {
+    const salida = document.getElementById("salida");
+    let inicio = 0;
+    const textoLimpio = texto.replaceAll(" ", "").toLowerCase();
+    let final = textoLimpio.length - 1;
+    for (inicio; inicio < textoLimpio.length; inicio++) {
+        if (textoLimpio[inicio] != textoLimpio[final]) {
+            salida.textContent += "\nLa palabra " + texto + " no es un palindromo";
+            return false;
+        }
+        final--;
+    }
+    salida.textContent += "\nLa palabra " + texto + " es un palindromo"
+    return true;
 }
