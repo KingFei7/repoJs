@@ -5,6 +5,7 @@ window.onload = principal;
 function principal() {
     document.getElementById("btnRegistrar").onclick = registrarVentas;
     document.getElementById("btnObjetivo").onclick = objetivo;
+    document.getElementById("btnResumen").onclick = resumen;
 }
 let ventas = 0;
 let total = 0;
@@ -53,16 +54,33 @@ function registrarVentas() {
 }
 
 function objetivo(){
-    let objetivo = document.getElementById("Objetivo")
+    let objetivo = document.getElementById("Objetivo");
     let necesario = 0;
+
     if (total >= 500) {
         objetivo.textContent = "Has cumplido el objetivo";
-    } else if (total%50 == 0){
-        necesario = Math.trunc((500 - total)/50);
-        objetivo.textContent = "Necesitas " + necesario + " billetes de 50" + "\nSerían en total: " + ((necesario * 50) + total); 
     } else {
-        necesario = Math.trunc((500 - total)/50) + 1;
-        objetivo.textContent = "Necesitas " + necesario + " billetes de 50" + "\nSerían en total: " + ((necesario * 50) + total); 
+        while ((total + (necesario * 50)) < 500) {
+            necesario++;
+        }
+        objetivo.textContent = "Necesitas " + necesario + " billetes de 50" + "\nSerían en total: " + ((necesario * 50) + total);
     }
-
 }
+
+function resumen(){
+    let resumen = document.getElementById("Resumen")
+
+    if (ventas > 0) {
+        resumen.textContent = "Ventas: " + ventas + "\n" +
+        "Total: " + total + " €" + "\n" +
+        "Máximo: " + maximo + " €" + "\n" +
+        "Mínimo: " + minimo + " €" + "\n" +
+        "Ventas de 50: " + ventas50 + "\n" +
+        "Representación visual: "
+        for (let i = 1; i <= ventas; i++ ){
+            resumen.textContent += "#"
+        }
+    }
+}
+
+
