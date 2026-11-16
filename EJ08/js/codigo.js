@@ -46,7 +46,7 @@ function registrarVentas() {
         }   else if (!esPositivo(venta) && venta !== null && venta.toUpperCase().trim()!== "FIN"){
                 venta = prompt("Introduce un número mayor que 0");
         }
-    } while (venta !== null && venta.toUpperCase().trim()!== "FIN");
+    } while (venta !== null && venta.toUpperCase().trim()!== "FIN" && venta !== "");
     if (ventas >= 1) {
         resumen.textContent = "\nNúmero de ventas: " + ventas + "\nTotal de venta: " + total +
         "\nMáximo: " + maximo + " €"+ "\nMínimo: " + minimo + "€ " + "\nVentas de más de 50 euros: " + ventas50;

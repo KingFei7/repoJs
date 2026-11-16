@@ -109,13 +109,11 @@ function transformar(){
 
 function remplazar() {
     const texto = document.getElementById("texto1").value;
-    const count = 0;
     if (texto.toUpperCase().indexOf("A") == -1) {
-        salida.textContent += 
-        "Tu texto no tiene As";
+        salida.textContent += "Tu texto no tiene As";
     } else {
         salida.textContent += "Tu texto: " + texto + "\n" +
-        "Texto cambiado: " + texto.replaceAll("(?i)a", 4);
+        "Texto cambiado: " + texto.replace(/a/gi, "4");
     }
 }
 
