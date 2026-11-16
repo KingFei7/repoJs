@@ -104,7 +104,7 @@ function transformar(){
     salida.textContent += "Has introducido este texto: " + texto + "\n"
     + "Has seleccionado los siguientes indices: " + primeraPos + " y " + ultimaPos + "\n" 
     + "En Slice provoca este resultado: " + Slice + "\n" 
-    + "En Substring provoca este cambio: " + Substring; 
+    + "En Substring provoca este cambio: " + Substring + "\n"; 
 }
 
 function remplazar() {
@@ -113,7 +113,7 @@ function remplazar() {
         salida.textContent += "Tu texto no tiene As";
     } else {
         salida.textContent += "Tu texto: " + texto + "\n" +
-        "Texto cambiado: " + texto.replace(/a/gi, "4");
+        "Texto cambiado: " + texto.replace(/a/gi, "4"); //He tenido que buscarlo en internet, pero basicamente lo que hace gi es no discriminar entre minusculas y mayusculas. Lo he hecho así para aprenderlo de cara a futuros proyectos
     }
 }
 
@@ -137,7 +137,7 @@ function contarOcurrencias(texto, caracter) {
     }
 
     salida.textContent += "\nTu caracter: " + caracter + " aparece en " + texto + " " + count + " veces";
-
+    //Aqui no he añadido gi porque interesa encontrar la cadena completa
     return count;
 }
 
@@ -153,6 +153,7 @@ function esPalindromo(texto) {
         }
         final--;
     }
-    salida.textContent += "\nLa palabra " + texto + " es un palindromo"
+    salida.textContent += "\nLa palabra " + texto + " es un palindromo";
+    //Aquí en vez de hacer otra cadena pero con los caraceteres al revés, recorre la cadena 
     return true;
 }
