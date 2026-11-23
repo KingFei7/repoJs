@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "file": "${workspaceFolder}/DWEC_UD2_Prueba2_Fuentes_Alumnado/index.html"
+            "file": "${workspaceFolder}/Unidad3 Ej/EJ5/index.html"
         }
     ]
 }
